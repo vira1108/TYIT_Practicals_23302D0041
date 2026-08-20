@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Bash Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("bugbash.png") no-repeat center center/cover; 
+  overflow: hidden;
+}
+
+/* Animated Background Effect */
+body::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  animation: rotate 20s linear infinite;
+  z-index: -1;
+  transform-origin: center;
+}
+
+/* Container Styling */
+.container {
+  width: 90%;
+  width: 650px;
+  max-width: 800px;
+  height: auto;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 20px 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 20px auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Button Styling */
+button {
+  padding: 10px 30px;
+  font-size: 16px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #4caf50;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+.container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #6a1b9a;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 2s ease-out;
+}
+ h2 {
+  font-size: 2.5rem;
+  color: #6a1b9a;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-out;
+}
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideUp 1.5s ease-out;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #6a1b9a;
+  letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  padding: 10px;
+  border: 2px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+  border-color: #6a1b9a;
+  outline: none;
+  box-shadow: 0 0 10px rgba(106, 27, 154, 0.5);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.submit-btn {
+  padding: 12px;
+  background: linear-gradient(120deg, #6a1b9a, #8e24aa);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  letter-spacing: 1px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(120deg, #8e24aa, #6a1b9a);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  header h1 {
+      font-size: 1.8rem;
+  }
+
+  .container {
+      padding: 20px;
+  }
+
+  .submit-btn {
+      font-size: 0.9rem;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TECHVISTA 2025</h1>
+        <h2>Registration Form</h2>
+        
+        <!-- FIXED: Removed PHP action, added id -->
+        <form id="registrationForm">
+            
+            <!-- ADDED: Hidden field with Bug Bash event name -->
+            <input type="hidden" id="ename" value="Bug Bash">
+            
+            <!-- FIXED: Removed the visible Event Name field -->
+            
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <!-- SPECIAL: Two roll number fields (script will handle both) -->
+    
+            <div class="form-group">
+                <label for="roll">Roll No:</label>
+                <input type="text" id="roll" name="roll">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact No:</label>
+                <input type="number" id="contact" name="contact" required>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <!-- ADDED: Firebase script with special handling for two roll fields -->
+    <script type="module">
+        import { database } from "./firebase.js";
+        import { ref, push } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
+
+        const form = document.getElementById("registrationForm");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const eventName = document.getElementById("ename").value;
+            const name = document.getElementById("name").value.trim();
+            
+            // SPECIAL: Handle both roll number fields
+            const rollno = document.getElementById("rollno").value.trim();
+            const rollAlt = document.getElementById("roll")?.value.trim() || "";
+            // Use primary roll if available, otherwise use alternate
+            const finalRoll = rollno || rollAlt;
+            
+            const email = document.getElementById("email").value.trim();
+            const contact = document.getElementById("contact").value.trim();
+
+            if (!name || !finalRoll || !email || !contact) {
+                alert("Please fill all fields! (At least one Roll No field required)");
+                return;
+            }
+
+            push(ref(database, "registrations/"), {
+                eventName,
+                name,
+                rollno: finalRoll,  // Save the roll number
+                email,
+                contact,
+                timestamp: new Date().toISOString()
+            })
+            .then(() => {
+                alert("🎉 Registration Successful for Bug Bash!");
+                form.reset();
+            })
+            .catch((err) => {
+                console.error("Registration failed:", err);
+                alert("❌ Failed to register. Check console.");
+            });
+        });
+    </script>
+</body>
+</html>

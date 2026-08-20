@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-frame {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Adjust columns */
+            grid-template-rows: repeat(3, 1fr);
+            height: 675px;
+            width: 1500px;
+            
+            gap: 15px;
+           
+            overflow: hidden;
+        }
+
+        .image-frame a {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display:block;
+            text-decoration: none;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-frame a:hover img {
+            transform: scale(1.1);
+            filter: brightness(50%);
+        }
+
+        .image-frame .info {
+    position: absolute;
+    bottom: -100%; /* Initially hidden */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(166, 132, 188, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    transition: bottom 0.4s ease-in-out;
+}
+.image-frame a.active .info {
+  bottom: 0;
+}
+        .image-frame a:hover .info {
+            bottom: 0;
+        }
+.button{
+    color: black;
+    background-color: white;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+<div class="video-container">
+    <video autoplay loop muted playsinline>
+        <source src= "login_pg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="image-frame">
+    <a href="event1.html">
+        <img src="m2m.png" alt="Event 1">
+        <div class="info">Event 1: M2M <br>Challenges participants to merge human intellect with machine precision, creating innovative solutions in AI, robotics, and automation. Competitors design and showcase prototypes that solve real-world problems, emphasizing innovation, practicality, and impact.</div>
+    </a>
+    <a href="event2.html">
+        <img src="tug_of_war.png" alt="Event 2">
+        <div class="info">Event 2: Tug-of-Word <br>Fast-paced debate competition where participants showcase wit, reasoning, and eloquence on various topics. With minimal prep time, they compete in individual and team rounds, judged on clarity, relevance, and persuasion.</div>
+    </a>
+    <a href="event3.html">
+        <img src="bgmi.png" alt="Event 3">
+        <div class="info">Event 3: BGMI Warrior League Ultimate e-sports showdown where solo players and squads battle in intense matches. With strategy, precision, and survival skills, participants compete through multiple rounds to dominate the leaderboard and claim victory.</div>
+    </a>
+    <a href="event4.html">
+        <img src="digiart.png" alt="Event 4">
+        <div class="info">Event 4: DigiArt <br> Digital art competition for designers, painters, and animators to showcase creativity. Participants create stunning artworks on given themes using design software, judged on originality, aesthetics, and theme adherence.</div>
+    </a>
+    <a href="event5.html">
+        <img src="shadowscript.png" alt="Event 5">
+        <div class="info">Event 5: Shadow Script <br>Intense coding competition challenging participants with algorithm development, debugging, and problem-solving under time constraints. It tests programming expertise, rewarding innovation and efficiency.</div>
+    </a>
+    <a href="event6.html">
+        <img src="lockedintime.png" alt="Event 6">
+        <div class="info">Event 6: Locked-In-Time <br>Thrilling escape room challenge where teams solve puzzles, decode clues, and race against time to break free, testing critical thinking and teamwork.</div>
+    </a>
+    <a href="event7.html">
+        <img src="webwizard.png" alt="Event 7">
+        <div class="info">Event 7: Web Wizards <br>Challenges developers to create innovative, user-friendly websites based on a given theme, testing design, functionality, and technical execution.</div>
+    </a>
+    <a href="event8.html">
+        <img src="bugbash.png" alt="Event 8">
+        <div class="info">Event 8: Bug Bash <br>Challenges coders to find and fix errors in flawed codebases under tight deadlines, testing their debugging, optimization, and problem-solving skills.</div>
+    </a>
+    <a href="event9.html">
+        <img src="reelistic.png" alt="Event 9">
+        <div class="info">Event 9: Reelistic <br>Challenges filmmakers to create engaging short reels based on a given theme, focusing on storytelling, creativity, and impactful visuals.</div>
+    </a>
+    <a href="event10.html">
+        <img src="bits&giggles.png" alt="Event 10">
+        <div class="info">Event 10: Bits & Giggles <br> Fun-filled quiz mixing tech trivia, pop culture, and puzzles, testing both intellect and humor in an engaging competition.</div>
+    </a>
+    <a href="event11.html">
+        <img src="technovision.png" alt="Event 11">
+        <div class="info">Event 11: Technovision <br>Platform for innovators to pitch groundbreaking ideas, showcasing creativity, research, and real-world impact through presentations and demos.</div>
+    </a>
+    <a href="event12.html">
+        <img src="codelympics.png" alt="Event 12">
+        <div class="info">Event 12: Codelympics <br>Multi-round coding marathon testing algorithm design, problem-solving, and programming skills. With increasing difficulty, it challenges speed, accuracy, and innovation to crown the ultimate coding champions.</div>
+    </a>
+    <div class="button">
+    <a href ="start.html">
+        <button>EXIT</button>
+
+    </a>
+    </div>
+</div>
+
+</body>
+</html>
